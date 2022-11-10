@@ -1,4 +1,4 @@
-# LiveText
+# 🔍 LiveText 📝
 Translate text from images!
 
 ![french](https://user-images.githubusercontent.com/71805570/201025065-02633da9-a80a-45fb-bd16-676819a54af3.jpg)
