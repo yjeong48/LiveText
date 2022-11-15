@@ -100,31 +100,32 @@ def translate(text, source_language, subscription_key, location, constructed_url
 def allowed_file(filename): 
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS 
 
-@app.route("/", methods=["POST"])
+@app.route("/", methods=["POST", "GET"])
 def my_server():
     image_path = ""
     # check if the post request has the file part 
     if 'file' not in request.files: 
         print("file not in request")
         return flask.Response("Request does not contain image file.", headers={"Content-Type":"text/html"})
-    file = request.files['file'] 
-    if file and allowed_file(file.filename): 
-        filename = secure_filename(file.filename) 
-        image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-        file.save(image_path) 
+    else:
+        file = request.files['file'] 
+        if file and allowed_file(file.filename): 
+            filename = secure_filename(file.filename) 
+            image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            file.save(image_path) 
 
-    #Authenticate Computer Vision client
-    endpoint = "https://livetext.cognitiveservices.azure.com/"
-    trans_endpoint = "https://api.cognitive.microsofttranslator.com"
-    computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
-    detect_constructed_url = trans_endpoint + '/detect'
-    trans_constructed_url = trans_endpoint + '/translate'
-    
-    text = get_text(image_path, computervision_client)
-    source_language = detect_language(text, subscription_key, location, detect_constructed_url)
-    translated_text = translate(text, source_language, subscription_key, location, trans_constructed_url)
+        #Authenticate Computer Vision client
+        endpoint = "https://livetext.cognitiveservices.azure.com/"
+        trans_endpoint = "https://api.cognitive.microsofttranslator.com"
+        computervision_client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
+        detect_constructed_url = trans_endpoint + '/detect'
+        trans_constructed_url = trans_endpoint + '/translate'
+        
+        text = get_text(image_path, computervision_client)
+        source_language = detect_language(text, subscription_key, location, detect_constructed_url)
+        translated_text = translate(text, source_language, subscription_key, location, trans_constructed_url)
 
-    return flask.Response(translated_text, headers={"Content-Type":"text/html"})
+        return flask.Response(translated_text, headers={"Content-Type":"text/html"})
 
 
 if __name__ == "__main__":
