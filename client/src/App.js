@@ -27,7 +27,7 @@ class App extends Component {
 	console.log(this.state.selectedFile);
 	
 	// Request made to the backend api
-	axios.post("http://localhost:5000", formData)
+	axios.post("https://ocrlivetext.herokuapp.com/translate", formData)
 	.then(response => this.setState({ translated_text: response.data}))
 	.catch(function (error) {
 		console.log(error)
