@@ -1,6 +1,6 @@
 from flask import Flask, flash, request, redirect, url_for 
 import flask
-from flask_cors import CORS
+#from flask_cors import CORS
 from werkzeug.utils import secure_filename 
 from dotenv import load_dotenv
 import os
@@ -16,7 +16,7 @@ ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER 
-cors = CORS(app)
+#cors = CORS(app)
 load_dotenv()
 subscription_key = os.getenv('COG_SERVICE_KEY')
 location = os.getenv('COG_SERVICE_REGION')
