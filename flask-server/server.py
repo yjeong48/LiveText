@@ -102,8 +102,10 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS 
 
 
-@app.route("/", methods=["POST"])
+@app.route("/", methods=["POST", "GET"])
 def my_translator():
+    if request.method == 'GET':
+        return flask.Response("flask server is running", headers={"Content-Type":"text/html"})
     image_path = ""
     # check if the post request has the file part 
     if 'file' not in request.files: 
