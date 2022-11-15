@@ -14,7 +14,7 @@ import requests, uuid, json
 UPLOAD_FOLDER = '/Users/yoonsungjeong/personalproject/pythonProject/flask-server/images' 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif']) 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='client/build')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER 
 #cors = CORS(app)
 load_dotenv()
