@@ -5,5 +5,6 @@ Translate text from images!
 
 Try selecting a specific part you want to translate!
 
-![livetext_demo](https://user-images.githubusercontent.com/71805570/204058659-f4259126-241c-4c9b-9506-7bffff5a56e8.gif)
+![IMG_5C9CA878A97E-1](https://user-images.githubusercontent.com/71805570/204059257-9bb8b50e-6b85-4349-8b20-b4fccca7e993.jpeg)
+
 
