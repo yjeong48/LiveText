@@ -1,7 +1,7 @@
 # 🔍 LiveText 📝
 Translate text from images!
 
-![french](https://user-images.githubusercontent.com/71805570/201025065-02633da9-a80a-45fb-bd16-676819a54af3.jpg)
+![IMG_3BE1E121E304-1](https://user-images.githubusercontent.com/71805570/204058166-a01eeb75-087a-484b-a9d3-57322b515b82.jpeg)
 
+Try selecting a specific part you want to translate!
 
-![Screen Shot 2022-11-10 at 1 05 25 AM](https://user-images.githubusercontent.com/71805570/201023529-d7795a49-df8a-4b17-96c3-8b021375e077.png)
