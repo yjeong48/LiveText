@@ -5,6 +5,7 @@ Translate text from images!
 
 Try selecting a specific part you want to translate!
 
-![IMG_5C9CA878A97E-1](https://user-images.githubusercontent.com/71805570/204059257-9bb8b50e-6b85-4349-8b20-b4fccca7e993.jpeg)
+![IMG_01D1FCE1EE9A-1](https://user-images.githubusercontent.com/71805570/204059351-cad3e127-d4ef-4a58-a264-bb18a8a75189.jpeg)
+
 
 
